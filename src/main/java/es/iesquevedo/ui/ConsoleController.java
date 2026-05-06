@@ -3,9 +3,7 @@ package es.iesquevedo.ui;
 import es.iesquevedo.modelo.Alquiler;
 import es.iesquevedo.modelo.Coche;
 import es.iesquevedo.modelo.Usuario;
-import es.iesquevedo.service.AlquilerService;
-import es.iesquevedo.service.CocheService;
-import es.iesquevedo.service.UsuarioService;
+import es.iesquevedo.service.*;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -17,12 +15,29 @@ public class ConsoleController {
     private final CocheService cocheService;
     private final UsuarioService usuarioService;
     private final AlquilerService alquilerService;
+    private final CocheService cocheService1;
+    private final UsuarioService usuarioService1;
+    private final AlquilerService alquilerService1;
 
-    public ConsoleController(Scanner sc) {
+    public ConsoleController(Scanner sc, CocheService cocheService1, UsuarioService usuarioService1, AlquilerService alquilerService1) {
         this.sc = sc;
-        this.cocheService = new CocheService();
-        this.usuarioService = new UsuarioService();
-        this.alquilerService = new AlquilerService();
+        this.cocheService = cocheService1;
+        this.cocheService1 = cocheService1;
+        this.usuarioService = usuarioService1;
+        this.usuarioService1 = usuarioService1;
+        this.alquilerService = alquilerService1;
+        this.alquilerService1 = alquilerService1;
+    }
+
+    public ConsoleController(Scanner sc, Scanner sc1, CocheService cocheService, UsuarioService usuarioService, AlquilerService alquilerService, CocheService cocheService1, UsuarioService usuarioService1, AlquilerService alquilerService1) {
+
+        this.sc = sc1;
+        this.cocheService = cocheService;
+        this.usuarioService = usuarioService;
+        this.alquilerService = alquilerService;
+        this.cocheService1 = cocheService1;
+        this.usuarioService1 = usuarioService1;
+        this.alquilerService1 = alquilerService1;
     }
 
     // Menús delegados desde Main
