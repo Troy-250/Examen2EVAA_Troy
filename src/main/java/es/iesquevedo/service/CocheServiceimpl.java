@@ -8,9 +8,11 @@ import java.util.Optional;
 
 public class CocheServiceimpl implements CocheService {
     private final CocheRepository repo;
+    private final CocheRepository cocheRepository;
 
-    public CocheServiceimpl() {
+    public CocheServiceimpl(CocheRepository cocheRepository) {
         this.repo = cocheRepository;
+        this.cocheRepository = cocheRepository;
     }
 
     @Override

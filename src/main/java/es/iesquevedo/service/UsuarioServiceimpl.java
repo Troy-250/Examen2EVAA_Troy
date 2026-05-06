@@ -8,9 +8,11 @@ import java.util.Optional;
 
 public class UsuarioServiceimpl implements UsuarioService {
     private final UsuarioRepository repo;
+    private final UsuarioRepository usuarioRepository;
 
-    public UsuarioServiceimpl() {
+    public UsuarioServiceimpl(UsuarioRepository usuarioRepository) {
         this.repo = usuarioRepository;
+        this.usuarioRepository = usuarioRepository;
     }
 
     @Override
